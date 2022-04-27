@@ -6,22 +6,30 @@ $db = new dbconfig();
 class operations extends dbconfig{
 
     //Saving Records
-    public function add_staff(){
+    public function bio_data(){
         
         global $db;
 
-        if (isset($_POST['btn_add_staff'])) {
+        if (isset($_POST['btn_add_bio'])) {
 
-            $name = $db->check($_POST['name']);
-            $email = $db->check($_POST['email']);
+            $status = 1;
+            $nin = $db->check($_POST['nin']);
+            $fname = $db->check($_POST['fname']);
+            $oname = $db->check($_POST['oname']);
+            $lname = $db->check($_POST['lname']);
+            $address = $db->check($_POST['address']);
             $phone = $db->check($_POST['phone']);
-            $position = $db->check($_POST['position']);
+            $dob = $db->check($_POST['dob']);
+            $marital = $db->check($_POST['marital']);
+            $state = $db->check($_POST['state']);
+            $gender = $db->check($_POST['gender']);
+            $state_res = $db->check($_POST['state_res']);
             # code...
 
             
-            if ($this->insert_record($name, $email, $phone, $position)) {
+            if ($this->insert_record($nin,$fname,$oname,$lname,$address,$phone,$dob,$marital,$state,$gender,$state_res,$status)) {
 
-                $this->set_message('<div class="alert alert-success text-center"> Staff Added Successfully</div>');
+                $this->set_message('<div class="alert alert-success text-center"> Inmate Bio Data Added Successfully</div>');
                  ?>
                     <script>
                         setTimeout(() => window.location.href = "", 2000);
@@ -30,18 +38,18 @@ class operations extends dbconfig{
                 <?php
                 # code...
             }else{
-                $this->set_message('<div class="alert alert-danger"> Failed to Add record! </div>');
+                $this->set_message('<div class="alert alert-danger"> Failed to Add Bio Data! </div>');
             }
         }
 
     }
 
      //Inserting Record into the Database
-    function insert_record($name, $email, $phone, $position){
+    function insert_record($nin,$fname,$oname,$lname,$address,$phone,$dob,$marital,$state,$gender,$state_res,$picture,$status){
 
         global $db;
 
-        $query = "INSERT INTO staff (staff_name, email, phone, position) VALUES('$name','$email','$phone','$position')";
+        $query = "INSERT INTO bio_data (nin,fname,oname,lname,address,phone,dob,marital_status,state,gender,state_of_residence,picture,status) VALUES('$nin','$fname','$oname','$lname','$address','$phone','$dob','$marital','$state','$gender','$state_res','$picture','$status')";
         $result = mysqli_query($db->connection, $query);
 
         if ($result) {
