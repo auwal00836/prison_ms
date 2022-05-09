@@ -1,8 +1,13 @@
+<?php
+require_once('config/db.php');
+ $dbb = new operations();
+ $dbb->cell_details();
+
+?>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
   <?php 
-  session_start();
   include 'inc/header.php'; ?>
   <body>
 
@@ -31,14 +36,15 @@
           <div class="row justify-content-center">
             <div class="col-md-8 col-lg-5 text-center mb-1">
                <div class="card">
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" method="POST">
                                 <div class="card-body">
                                     <h4 class="card-title">Add Cell Details</h4>
+                                    <?php $dbb->display_message(); ?>
                                      <div class="form-group row">
                                         <label for="inmate_nin"
                                             class="col-sm-3 text-end control-label col-form-label">Inmate NIN</label>
                                         <div class="col-sm-9">
-                                            <input type="number" class="form-control" id="inmate_nin" name="Inmate_nin" 
+                                            <input type="number" class="form-control" id="inmate_nin" name="inmate_nin" 
                                                 placeholder="Inmate NIN Here">
                                         </div>
                                     </div>
@@ -94,7 +100,7 @@
                                 </div>
                                 <div class="border-top">
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-primary" id="btn_cell" name="btn_cell">Submit</button>
+                                        <button type="submit" class="btn btn-primary" id="btn_cell" name="btn_cell">Submit</button>
                                     </div>
                                 </div>
                             </form>

@@ -1,8 +1,13 @@
+<?php
+require_once('config/db.php');
+ $dbb = new operations();
+ $dbb->bio_data();
+
+?>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
   <?php 
-  session_start();
   include 'inc/header.php'; ?>
   <body>
 
@@ -31,9 +36,10 @@
           <div class="row justify-content-center">
             <div class="col-md-8 col-lg-5 text-center mb-1">
                <div class="card">
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" method="POST" enctype="multipart/form-data">
                                 <div class="card-body">
                                     <h4 class="card-title">Inmate Bio Data</h4>
+                                     <?php $dbb->display_message(); ?>
                                     <div class="form-group row">
                                         <label for="nin"
                                             class="col-sm-3 text-end control-label col-form-label">NIN</label>
@@ -132,6 +138,23 @@
                                                 placeholder="State of Rescident Name Here">
                                         </div>
                                     </div>
+                                      <div class="form-group row">
+                                        <label for="jtf"
+                                            class="col-sm-3 text-end control-label col-form-label">Jail Time</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" class="form-control" id="jail_time" name="jail_time" 
+                                                placeholder="Jail Time Here">
+                                        </div>
+                                    </div>
+                                     <div class="form-group row">
+                                        <label for="r_date"
+                                            class="col-sm-3 text-end control-label col-form-label">Realese Date</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" class="form-control" id="r_date" name="r_date" 
+                                                placeholder="Realese Date Here">
+                                        </div>
+                                    </div>
+                                   
                                     <div class="form-group row">
                                         <label for="address"
                                             class="col-sm-3 text-end control-label col-form-label">Contact Addess</label>
@@ -143,17 +166,16 @@
                                     <label class="col-md-3">File Upload</label>
                                     <div class="col-md-9">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="pic" name="pic"
-                                                required>
-                                            <label class="custom-file-label" for="validatedCustomFile">Choose
-                                                file...</label>
+                                            <input type="file" id="pic" name="pic" accept="image/*" 
+                                                >
+                                            
                                         </div>
                                     </div>
                                 </div>
                                 </div>
                                 <div class="border-top">
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-primary" id="btn_crime" name="btn_crime">Submit</button>
+                                        <button type="submit" class="btn btn-primary" name="btn_add_bio">Submit</button>
                                     </div>
                                 </div>
                             </form>

@@ -1,8 +1,13 @@
+<?php
+require_once('config/db.php');
+ $dbb = new operations();
+ $dbb->notify();
+
+?>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
   <?php 
-  session_start();
   include 'inc/header.php'; ?>
   <body>
 
@@ -33,36 +38,18 @@
             </div>
           </div>
           <div class="row justify-content-center">
+            
             <div class="col-md-4 pt-2 px-md-2 px-lg-3">
               <div class="card h-100">
                 <div class="card-body d-flex flex-column justify-content-around mx-auto">
                   <div class="text-center pt-5"><img class="img-fluid" src="assets/img/icons/pricing.png" alt="" />
-                    <h5 class="my-4">Staff</h5>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 pt-2 px-md-2 px-lg-3">
-              <div class="card h-100">
-                <div class="card-body d-flex flex-column justify-content-around mx-auto">
-                  <div class="text-center pt-5"><img class="img-fluid" src="assets/img/icons/pricing.png" alt="" />
-                    <h5 class="my-4">Timetable</h5>
+                    <h5 class="my-4">Notifications</h5>
                   </div>
                  
                 </div>
               </div>
             </div>
-            <div class="col-md-4 pt-2 px-md-2 px-lg-3">
-              <div class="card h-100">
-                <div class="card-body d-flex flex-column justify-content-around mx-auto">
-                  <div class="text-center pt-5"><img class="img-fluid" src="assets/img/icons/pricing.png" alt="" />
-                    <h5 class="my-4">Invigilation Allocation</h5>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div><!-- end of .container-->
 

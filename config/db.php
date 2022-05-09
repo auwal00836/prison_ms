@@ -1,8 +1,7 @@
 <?php
-
 require_once('config/functions.php');
 
-class dbconfig{
+ class dbconfig{
 
     public $connection;
 
