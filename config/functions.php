@@ -388,98 +388,44 @@ class operations extends dbconfig{
 
 
       //Add Multiple Staff
-
     
-    // function notify(){
-
-
+    function notify(){
         
-    //     $query = "SELECT  jail_time,release_date FROM bio_data   ";
-    //     $result = mysqli_query($this->connection, $query);
-    //     $data = mysqli_fetch_assoc($result);
-
-    //     if (mysqli_num_rows($result) > 0) {
-
-    //         //$nin = $data['nin'];
-    //         //$fname = $data['fname'];
-    //         $jail_time = $data['jail_time'];
-    //         $r_date = $data['release_date'];
-
-
-    //         $today = new DateTime('today');
-
-
-    //     $indate = date_create("$jail_time");
-    //     $outdate = date_create("$r_date");
-
-    //     $interval = date_diff($indate,$outdate);
-    //     $totalSpent = date_diff($indate,$today);
-    //     $totalDue = date_diff($today,$outdate);
-    //     $r = "Remain";
-       
-
-    //     echo "<br> Total Days: ".$interval->days;
-    //     echo "<br> Days Spent: ".$totalSpent->days;
-    //     echo "<br> Days Remaining: ".$totalDue->days;
-
-    //         return true;
-    //         # code...
-    //     }else{
-    //         return false;
-    //     }   
-         
- 
-    // }
-
-
-    function notify()
-    {
-
-        // Set the server time to that of Nigeria
-        date_default_timezone_set("Africa/Lagos");
-        
-        $query = "SELECT  nin, jail_time, release_date FROM bio_data   ";
+        $query = "SELECT  jail_time,release_date FROM bio_data   ";
         $result = mysqli_query($this->connection, $query);
+        $data = mysqli_fetch_assoc($result);
 
+        if (mysqli_num_rows($result) > 0) {
 
-        /*
-            Pseudocode:
-            Iterate through the list of inmates
-            for each inmate, compute the days spent and number of remaining days
-            if the number of remaining days if 0, the inmate's release date is today     
-        */ 
-
-        while ($data = mysqli_fetch_assoc($result)) {
-            
+            //$nin = $data['nin'];
+            //$fname = $data['fname'];
             $jail_time = $data['jail_time'];
             $r_date = $data['release_date'];
 
 
             $today = new DateTime('today');
 
-            $indate = date_create("$jail_time");
-            $outdate = date_create("$r_date");
 
-            $interval = date_diff($indate,$outdate);
-            $totalSpent = date_diff($indate,$today);
-            $totalDue = date_diff($today,$outdate);
-            $r = "Remain";
-           
-            if ($totalDue->days == 0) 
-            {
-                echo "<br><strong style='font-weight: 2rem; background-color: green; color: white; padding: 5px;'>The inmate with NIN <b style='color: red;'>" . $data['nin'] . "</b> is due for release.</strong>";   
-            }         
+        $indate = date_create("$jail_time");
+        $outdate = date_create("$r_date");
 
-            echo "<br> Total Days: " . $interval->days;
-            echo "<br> Days Spent: " . $totalSpent->days;
-            echo "<br> Days Remaining: " . $totalDue->days;
+        $interval = date_diff($indate,$outdate);
+        $totalSpent = date_diff($indate,$today);
+        $totalDue = date_diff($today,$outdate);
+        $r = "Remain";
+       
 
-            echo "<hr>";
+        echo "<br> Total Days: ".$interval->days;
+        echo "<br> Days Spent: ".$totalSpent->days;
+        echo "<br> Days Remaining: ".$totalDue->days;
 
-        }
-
-
-
+            return true;
+            # code...
+        }else{
+            return false;
+        }   
+         
+ 
     }
 
 
