@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 09, 2022 at 07:09 PM
+-- Generation Time: May 10, 2022 at 06:26 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -69,25 +69,15 @@ CREATE TABLE IF NOT EXISTS `bio_data` (
   `release_date` date DEFAULT NULL,
   `picture` varchar(30) NOT NULL,
   PRIMARY KEY (`sn`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bio_data`
 --
 
 INSERT INTO `bio_data` (`sn`, `nin`, `fname`, `lname`, `oname`, `address`, `phone`, `dob`, `marital_status`, `state_origin`, `gender`, `state_res`, `nationality`, `status`, `jail_time`, `release_date`, `picture`) VALUES
-(1, 23232222222, 'test', 'testttt', 't', 'ewwwwwwwwwwwq', '08166011219', '2022-05-07', 'single', 'k', 'male', 'k', 'n', 1, NULL, NULL, ''),
-(2, 2313212, 'test', 'testttt', 'ed', 'wefqwe', '08166011219', '2022-05-07', 'devorce', 'd', 'female', 'mj', 'n', 1, NULL, NULL, ''),
-(3, 23232222222, 'test', 'testttt', 'ed', 'JJ', '08166011219', '2022-05-07', 'single', 'k', 'male', 'k', 'n', 1, NULL, NULL, ''),
-(4, 66777777, 'nmnm', '', '', 'nhgf', '08166011219', '2022-05-07', 'single', 'e', 'male', 'd', 'f', 1, NULL, NULL, ''),
-(5, 9999, 'nmnm', '', '', '', '', '2022-05-07', 'married', '', 'male', '', '', 1, NULL, NULL, 'mybsc.jpg'),
-(6, 23232222222, 'weD', 'WES', 'WAS', 'SS', '08166011219', '2022-05-08', 'married', 'e', 'male', 'd', 'n', 1, NULL, NULL, ''),
-(7, 525525522, 'test', 'd', 'fd', 'hjkml,.kjjjkjjkjk', '08166011219', '2022-05-09', 'single', 'k', 'male', 'd', 'n', 1, NULL, NULL, 'lgmine.png'),
-(8, 5254555, 'test', 'testttt', 'WAS', 'fxcgvbhnjm', '08166011219', '2022-05-09', 'married', 'd', 'male', 'd', 'n', 1, NULL, NULL, 'lgmine.png'),
-(9, 4444554, 'test', 'd', '', '', '', '2022-05-09', 'single', 'e', 'male', '', 'f', 1, NULL, NULL, 'neco_s.png'),
-(10, 45522, 'test', 'as', '', 'cgbvnm,.', '', '2022-05-09', 'single', 'mm', 'male', 'd', 'n', 1, NULL, NULL, 'mypic.jpg'),
-(11, 4565244, 'test', 'testttt', '', 'sdfghj', '08166011219', '2022-05-09', 'single', 'd', 'male', 'k', 'n', 1, NULL, NULL, 'lgmine.png'),
-(12, 454211, 'test', 'testttt', '', 'dsfghjk', '08166011219', '2022-05-09', 'single', 'mm', 'male', 'k', 'n', 1, '2022-05-09', '2022-05-16', 'neco_s.png');
+(13, 23232222222, 'auwal', 'ismail', 'm', 'ASDFGHJKL', '08166011219', '2022-05-10', 'single', 'k', 'male', 'k', 'n', 1, '2022-05-10', '2022-05-17', 'neco_s.png'),
+(12, 454211, 'abdul', 'testttt', '', 'dsfghjk', '08166011219', '2022-05-09', 'single', 'mm', 'male', 'k', 'n', 1, '2022-05-09', '2022-05-16', 'neco_s.png');
 
 -- --------------------------------------------------------
 
